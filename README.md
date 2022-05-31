@@ -16,7 +16,7 @@ DB schema:
   │                
   ├── flight table
   ├── hotel table
-  └── rental-car table
+  └── car-rental table
  ```
 
 ## Frontend
@@ -27,11 +27,11 @@ DB schema:
 | /signup             | SignupForm        |   
 | /login              | LoginForm         |  
 | /hotels   	        | HotelsList        |
-| /hotels/:handle     | HotelsDetail      |
+| /hotels/:handle     | HotelDetail       |
 | /flights            | FlightsList       |
-| /flights/:handle    | FlightsDetail     |
-| /rentalcars         | RentalcarsList    |
-| /rentalcars/:handle | RentalcarssDetail |
+| /flights/:handle    | FlightDetail      |
+| /carsrental         | CarsrentalList    |
+| /carsrental/:handle | CarrentalDetail   |
 | /profile            | ProfileForm       |
 
 ## Component Architecture
@@ -52,10 +52,10 @@ api
 │   ├── FlightsList ── Search
 │   └── FlightDetail 
 │ 
-├── Rentalcars
-│   ├── RentalcarsCard
-│   ├── RentalcarsList ── Search
-│   └── RentalcarDetail 
+├── Carsrental
+│   ├── CarsrentalCard
+│   ├── CarsrentalList ── Search
+│   └── CarrentalDetail 
 │ 
 ├── Homepage ── NoLoggedIn
 │ 
