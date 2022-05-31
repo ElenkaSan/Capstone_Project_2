@@ -7,7 +7,7 @@ This website allows users to create an account and save the result after that wi
 ## App Information
 ## Backend
 ### Data
-For this CP database that takes food-related information from the [SMHT](https://api)
+For this CP database that takes trip-related information from the [SMHT](https://api)
 
 ```sh
 DB schema: 
