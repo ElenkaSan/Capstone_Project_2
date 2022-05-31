@@ -84,17 +84,10 @@ The app's functionality includes:
   - User can record ideas and ruminations about the venue in your own personal note
 
 ### Technology Stack
-- Front-End: HTML5 | CSS3 | JavaScript | React | React Bootstrap | Redux | RTL 
-- Back-End: Node.js | Express.js | JWT Authentication | Bcrypt | PostgreSQL | RESTful API Endpoints | MongoDB 
+- Front-End: HTML5 | CSS3 | JavaScript | React | React Bootstrap | Redux | RTL | JSON Schema | JSON Web Token
+- Back-End: Node.js | Express.js | SuperTest | JWT Authentication | Bcrypt | PostgreSQL | Axios | RESTful API Endpoints | MongoDB 
+- Heroku
+- Git/GitHub
 
-Axios
-Bcrypt
-JSON Schema
-JSON Web Token
-Sequelize
-SuperTest
-Heroku
-Surge
-Git/GitHub
 Feel free to improve or contribute. Pull requests are always welcome!
 Author [Elena Nurullina](https://github.com/ElenkaSan/)
