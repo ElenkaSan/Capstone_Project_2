@@ -83,8 +83,8 @@ The app's functionality includes:
   - User can record ideas and ruminations about the venue in your own personal note
 
 ### Technology
-Front-End: HTML5 | CSS3 | JavaScript | React | Redux | RTL 
-Back-End: Node.js | Express.js | JWT Authentication | Bcrypt | Postgres | RESTful API Endpoints | MongoDB 
+- Front-End: HTML5 | CSS3 | JavaScript | React | Redux | RTL 
+- Back-End: Node.js | Express.js | JWT Authentication | Bcrypt | Postgres | RESTful API Endpoints | MongoDB 
 
 
 Feel free to improve or contribute. Pull requests are always welcome!
