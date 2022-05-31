@@ -39,37 +39,37 @@ DB schema:
 App
 api
 ├── Routes-nav
-|   ├── Navigation
-|   └── Routes
-|
+│   ├── Navigation
+│   └── Routes
+│ 
 ├── Hotels
 │   ├── HotelsCard
 │   ├── HotelsList ── Search
-|   └── HotelDetail 
+│   └── HotelDetail 
 │   
 ├── Flights
 │   ├── FlightsCard
-|   ├── FlightsList ── Search
-|   └── FlightDetail 
-|
+│   ├── FlightsList ── Search
+│   └── FlightDetail 
+│ 
 ├── Rentalcars
 │   ├── RentalcarsCard
-|   ├── RentalcarsList ── Search
-|   └── RentalcarDetail 
-|
+│   ├── RentalcarsList ── Search
+│   └── RentalcarDetail 
+│ 
 ├── Homepage ── NoLoggedIn
-|
+│ 
 ├─┬ Auth
 │ │ ├── LoginForm
-| | ├── SignupForm
-| | └── ProfileForm
+│ │ ├── SignupForm
+│ │ └── ProfileForm
 │ └── UserContext
-|
+│ 
 ├── Common
-|   ├── LoadingSpinner 
-|   ├── SearchForm
+│   ├── LoadingSpinner 
+│   ├── SearchForm
 │   └── Alert
-|
+│ 
 └── Hooks
     ├── useLocalStorage
     ├── useTimedMessage
