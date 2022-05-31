@@ -83,10 +83,18 @@ The app's functionality includes:
   - User can save favorite place results into thier favorites list after signup
   - User can record ideas and ruminations about the venue in your own personal note
 
-### Technology
-- Front-End: HTML5 | CSS3 | JavaScript | React | Redux | RTL 
-- Back-End: Node.js | Express.js | JWT Authentication | Bcrypt | Postgres | RESTful API Endpoints | MongoDB 
+### Technology Stack
+- Front-End: HTML5 | CSS3 | JavaScript | React | React Bootstrap | Redux | RTL 
+- Back-End: Node.js | Express.js | JWT Authentication | Bcrypt | PostgreSQL | RESTful API Endpoints | MongoDB 
 
-
+Axios
+Bcrypt
+JSON Schema
+JSON Web Token
+Sequelize
+SuperTest
+Heroku
+Surge
+Git/GitHub
 Feel free to improve or contribute. Pull requests are always welcome!
 Author [Elena Nurullina](https://github.com/ElenkaSan/)
