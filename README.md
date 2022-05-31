@@ -10,7 +10,7 @@ This website allows users to create an account and save the result after that wi
 For this CP database that takes food-related information from the [SMHT](https://api)
 
 ```sh
-* DB schema: *
+DB schema: 
   ├── personal trip list \ favorite trip table
   │   └── Routes
   │                
