@@ -12,11 +12,11 @@ For this CP database that takes trip-related information from the [SMHT](https:/
 ```sh
 DB schema: 
   ├── personal trip list \ favorite trip table
-  │   └── Routes
+  │   └── users table
   │                
-  ├── flight table
-  ├── hotel table
-  └── car-rental table
+  ├── flights table
+  ├── hotels table
+  └── cars-rental table
  ```
 
 ## Frontend
