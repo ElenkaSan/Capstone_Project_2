@@ -5,7 +5,7 @@ When you search for any destination in the world, you will get recommendations f
 This website allows users to create an account and save the result after that with create a list of their favorites. 
 
 ## App Information
-## Backend
+## Back-end
 ### Data
 For this CP database that takes trip-related information from the [SMHT](https://api)
 
@@ -19,7 +19,7 @@ DB schema:
   └── cars-rental table
  ```
 
-## Frontend
+## Front-end
 ### Routes
 |Path                 | Component         |  
 |---------------------|-------------------|
