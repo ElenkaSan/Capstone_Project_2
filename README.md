@@ -10,12 +10,12 @@ This website allows users to create an account and save the result after that wi
 For this CP database that takes food-related information from the [SMHT](https://api)
 
 `DB schema:`
-  - aplication\favorite trip table
-    |__ users table
-    |                 
-    |__ flight table
-    |__ hotel table
-    |__ rental-car table
+  ├── personal trip list \ favorite trip table
+  │   └── Routes
+  │                
+  ├── flight table
+  ├── hotel table
+  └── rental-car table
 
 ## Frontend
 ### Routes
@@ -42,7 +42,7 @@ api
 |
 ├── Hotels
 │   ├── HotelsCard
-|   ├── HotelsList ── Search
+│   ├── HotelsList ── Search
 |   └── HotelDetail 
 │   
 ├── Flights
