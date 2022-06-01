@@ -18,6 +18,7 @@ DB schema:
   ├── hotels table
   └── cars-rental table
  ```
+ <img width="795" alt="Screen Shot 2022-06-01 at 2 20 39 PM" src="https://user-images.githubusercontent.com/75818489/171475408-41dfa99d-114e-4195-afb6-01bd5604332a.png">
 
 ## Front-end
 ### Routes
