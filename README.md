@@ -11,9 +11,9 @@ For this CP database that takes trip-related information from the [SMHT](https:/
 
 ```sh
 DB schema: 
-  ├── personal trip list \ favorite trip table
+  ├── personal TripList \ favorite trip table
   │   └── users table
-  │                
+  │                 
   ├── flights table
   ├── hotels table
   └── cars-rental table
@@ -63,7 +63,7 @@ api
 ├─┬ Auth
 │ │ ├── LoginForm
 │ │ ├── SignupForm
-│ │ └── ProfileForm ── UserAccount
+│ │ └── ProfileForm ── UserAccount 
 │ └── UserContext
 │ 
 ├── Common
