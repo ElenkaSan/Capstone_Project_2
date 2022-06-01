@@ -11,7 +11,7 @@ For this CP database that takes trip-related information from the [SMHT](https:/
 
 ```sh
 DB schema: 
-  ├── personal TripList \ favorite trip table
+  ├── personal MyTripList \ favorite trip table
   │   └── users table
   │                 
   ├── flights table
