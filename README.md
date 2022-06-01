@@ -33,7 +33,7 @@ DB schema:
 | /carsrental         | CarsrentalList    |
 | /carsrental/:handle | CarrentalDetail   |
 | /profile            | ProfileForm       |
-| /user               | UserAccount       |
+| /mytrip             | UserAccount       |
 
 ## Component Architecture
 ```sh
@@ -63,7 +63,7 @@ api
 ├─┬ Auth
 │ │ ├── LoginForm
 │ │ ├── SignupForm
-│ │ └── ProfileForm ── UserAccount 
+│ │ └── ProfileForm ── UserAccount (myTrip)
 │ └── UserContext
 │ 
 ├── Common
