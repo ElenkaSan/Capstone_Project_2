@@ -86,8 +86,9 @@ The app's functionality includes:
 ### Technology Stack
 - Front-End: HTML5 | CSS3 | JavaScript | React | React Bootstrap | Redux | RTL | JSON Schema | JSON Web Token
 - Back-End: Node.js | Express.js | SuperTest | JWT Authentication | Bcrypt | PostgreSQL | Axios | RESTful API Endpoints | MongoDB 
-- Heroku
-- Git/GitHub
+
+### Hosting
+Heroku
 
 Feel free to improve or contribute. Pull requests are always welcome!
 Author [Elena Nurullina](https://github.com/ElenkaSan/)
