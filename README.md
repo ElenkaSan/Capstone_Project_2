@@ -7,7 +7,7 @@ This website allows users to create an account and save the result after that wi
 ## App Information
 ## Back-end
 ### Data
-For this CP database that takes trip-related information from the [SMHT](https://api)
+For this CP database that takes trip-related information from the [Priceline API]([https://api](https://rapidapi.com/tipsters/api/priceline-com-provider/))
 
 ```sh
 DB schema: 
