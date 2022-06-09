@@ -19,7 +19,8 @@ DB schema:
   └── cars-rental table
  ```
 
-<img width="1364" alt="Screen Shot 2022-06-08 at 11 21 07 PM" src="https://user-images.githubusercontent.com/75818489/172757479-3c47c972-f7f8-445f-8487-5546f62bb0af.png">
+<img width="1364" alt="Screen Shot 2022-06-08 at 11 21 07 PM" src="https://user-images.githubusercontent.com/75818489/172757611-e2e14965-6328-4a7c-8013-40ee828ad0f8.png">
+
 
 
 ## Front-end
