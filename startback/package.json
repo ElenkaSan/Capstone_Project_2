@@ -1,0 +1,37 @@
+{
+  "name": "vacation-time",
+  "version": "2.0.0",
+  "description": "",
+  "main": "nodemon main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js",
+    "test": "jest -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "jsonschema": "^1.2.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.3.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "passport": "^0.6.0",
+    "pg": "^8.7.3",
+    "socket.io": "^4.5.1",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "supertest": "^5.0.0-0"
+  }
+}
