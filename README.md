@@ -14,14 +14,12 @@ DB schema:
   ├── mytrips table (favorite trip) 
   │   └── users table
   │                 
-  ├── flights table
-  ├── hotels table
-  └── cars-rental table
+  ├── flightReservations table
+  ├── hotelReservations table
+  └── carRentals table
  ```
 
-<img width="1364" alt="Screen Shot 2022-06-08 at 11 21 07 PM" src="https://user-images.githubusercontent.com/75818489/172757611-e2e14965-6328-4a7c-8013-40ee828ad0f8.png">
-
-
+<img width="1296" alt="Screen Shot 2022-06-12 at 11 16 09 AM" src="https://user-images.githubusercontent.com/75818489/173240035-91a87a79-2b85-43f1-bbe7-5214af049b10.png">
 
 ## Front-end
 ### Routes
