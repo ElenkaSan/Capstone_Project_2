@@ -11,7 +11,7 @@ For this CP database that takes trip-related information from the [Priceline API
 
 ```sh
 DB schema: 
-  ├── mytrips table (favorite trip) 
+  ├── trips table (favorite trip) 
   │   └── users table
   │                 
   ├── flightReservations table
@@ -19,8 +19,7 @@ DB schema:
   └── carRentals table
  ```
 
-<img width="1249" alt="Screen Shot 2022-06-12 at 12 27 49 PM" src="https://user-images.githubusercontent.com/75818489/173243194-a5382878-ef2b-4c92-b315-3c3fc6708e92.png">
-
+<img width="1249" alt="Screen Shot 2022-06-12 at 12 39 33 PM" src="https://user-images.githubusercontent.com/75818489/173243653-85f497ea-a5f3-40c7-af9e-82319bb7d75e.png">
 
 ## Front-end
 ### Routes
