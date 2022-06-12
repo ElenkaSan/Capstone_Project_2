@@ -19,7 +19,8 @@ DB schema:
   └── carRentals table
  ```
 
-<img width="1296" alt="Screen Shot 2022-06-12 at 11 16 09 AM" src="https://user-images.githubusercontent.com/75818489/173240035-91a87a79-2b85-43f1-bbe7-5214af049b10.png">
+<img width="1249" alt="Screen Shot 2022-06-12 at 12 27 49 PM" src="https://user-images.githubusercontent.com/75818489/173243194-a5382878-ef2b-4c92-b315-3c3fc6708e92.png">
+
 
 ## Front-end
 ### Routes
