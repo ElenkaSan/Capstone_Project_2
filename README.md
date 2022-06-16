@@ -1,11 +1,11 @@
-# Vacation Time
+# Capstone Project 2 - Vacation Time
 ### *Try the app [Vacation Time - not yet](https://blabla.herokuapp.com/)*
 Ready for travel, let’s make the trip of your dreams. This website `Vacation Time` allows you to find the nice hotel, flight and car rental for you with the best price. When your make next travel destination then can do a record personalized notes for vacation planning after create an account.
 When you search for any destination in the world, you will get recommendations for nice venues and places to visit in the area and detailed information about those places including pictures and maps. You can conveniently save your results along with any notes you've made in your personalized list.
 This website allows users to create an account and save the result after that with create a list of their favorites. 
 
 ## App Information
-## [Back-end]('https://github.com/ElenkaSan/Capstone_Project_2_Backend.git') 
+## [Back-end](https://github.com/ElenkaSan/Capstone_Project_2_Backend.git) 
 ### Data
 For this CP database that takes trip-related information from the [Priceline API](https://rapidapi.com/tipsters/api/priceline-com-provider/)
 
