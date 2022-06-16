@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://our.company.com/companyNew.schema.json",
+    "type": "object",
+    "properties": {
+      "numberOfPassengers": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string"
+      },
+      "classType": {
+        "type": "string"
+      },
+      "locationD": {
+        "type": "string"
+      },
+      "locationA": {
+        "type": "string"
+      },
+      "dateD": {
+        "type": "string"
+      },
+      "dateA": {
+        "type": "string"
+      },
+      "priceMin": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "priceMax": {
+        "type": "integer"
+      },
+      "sortOrder": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "numberOfPassengers",
+      "type",
+      "classType",
+      "locationD",
+      "locationA",
+      "dateD",
+      "dateA",
+      "sortOrder"
+    ]
+  }
