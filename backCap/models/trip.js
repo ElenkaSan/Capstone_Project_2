@@ -1,9 +1,8 @@
 "use strict";
 
 const db = require("../db");
-const { NotFoundError} = require("../expressError");
+const { NotFoundError } = require("../expressError");
 const { sqlForPartialUpdate } = require("../helpers/sql");
-
 
 class Trip {
   /** Create a flight (from data), update db, return new flight data.
@@ -11,29 +10,30 @@ class Trip {
 
   static async create(data) {
     const result = await db.query(
-          `INSERT INTO trips (tripName,
-                              tripDate,
+      `INSERT INTO trips (trip_name,
+                              trip_date,
                               username,
                               flightReservation_id,
                               hotelReservation_id,
                               carRental_id)
-           VALUES ($1, $2, $3, $4)
+           VALUES ($1, $2, $3, $4, $5, $6)
            RETURNING
                     id,
-                    tripName,
-                    tripDate, 
+                    trip_name AS "tripName",
+                    trip_date AS "tripDate",
                     username,
                     flightReservation_id AS "flightReservationId",
                     hotelReservation_id AS "hotelReservationId",
                     carRental_id AS "carRentalId"`,
-        [
-          data.tripName,
-          data.tripData,
-          data.username,
-          data.flightReservationId,
-          data.hotelReservationId,
-          data.carRentalId,
-        ]);
+      [
+        data.tripName,
+        data.tripData,
+        data.username,
+        data.flightReservationId,
+        data.hotelReservationId,
+        data.carRentalId,
+      ]
+    );
     let trip = result.rows[0];
 
     return trip;
@@ -50,7 +50,13 @@ class Trip {
    * -? sort_order
    * */
 
-  static async findAll({ username, flightReservationId, hotelReservationId, carRentalId, tripName } = {}) {
+  static async findAll({
+    username,
+    flightReservationId,
+    hotelReservationId,
+    carRentalId,
+    tripName,
+  } = {}) {
     let query = `SELECT t.id,
                         t.username,
                         t.flightReservation_id AS "flightReservationId",
@@ -65,14 +71,14 @@ class Trip {
     // queryValues so we can generate the right SQL
 
     if (username !== undefined) {
-        queryValues.push(`%${username}%`);
-        whereExpressions.push(`username ILIKE $${queryValues.length}`);
-      }
+      queryValues.push(`%${username}%`);
+      whereExpressions.push(`username ILIKE $${queryValues.length}`);
+    }
 
     if (flightReservationId !== undefined) {
-        queryValues.push(`%${flightReservationId}%`);
-        whereExpressions.push(`flightReservationId ILIKE $${queryValues.length}`);
-      }
+      queryValues.push(`%${flightReservationId}%`);
+      whereExpressions.push(`flightReservationId ILIKE $${queryValues.length}`);
+    }
 
     if (hotelReservationId !== undefined) {
       queryValues.push(`%${hotelReservationId}%`);
@@ -80,9 +86,9 @@ class Trip {
     }
 
     if (carRentalId !== undefined) {
-        queryValues.push(`%${carRentalId}%`);
-        whereExpressions.push(`carRentalId ILIKE $${queryValues.length}`);
-      }
+      queryValues.push(`%${carRentalId}%`);
+      whereExpressions.push(`carRentalId ILIKE $${queryValues.length}`);
+    }
 
     if (whereExpressions.length > 0) {
       query += " WHERE " + whereExpressions.join(" AND ");
@@ -105,7 +111,7 @@ class Trip {
 
   static async get(id) {
     const tripsRes = await db.query(
-     `SELECT id, 
+      `SELECT id, 
              tripName,
              tripDate, 
              username,
@@ -113,7 +119,9 @@ class Trip {
              hotelReservation_id AS "hotelReservationId",
              carRental_id AS "carRentalId"
       FROM trips
-      WHERE id = $1`, [id]);
+      WHERE id = $1`,
+      [id]
+    );
 
     const trip = tripsRes.rows[0];
 
@@ -135,9 +143,10 @@ class Trip {
    */
 
   static async update(id, data) {
-    const { setCols, values } = sqlForPartialUpdate(
-        data,
-        {});
+    const { setCols, values } = sqlForPartialUpdate(data, {
+      tripName: "trip_name",
+      tripDate: "trip_date",
+    });
     const idVarIdx = "$" + (values.length + 1);
 
     const querySql = `UPDATE trips
@@ -159,19 +168,20 @@ class Trip {
     return trip;
   }
 
-//    Delete trip from database; returns undefined.
+  //    Delete trip from database; returns undefined.
 
   static async remove(id) {
     const result = await db.query(
-          `DELETE
+      `DELETE
            FROM trips
            WHERE id = $1
-           RETURNING id`, [id]);
+           RETURNING id`,
+      [id]
+    );
     const trip = result.rows[0];
 
     if (!trip) throw new NotFoundError(`No found trip: ${id}`);
   }
-
 }
 
 module.exports = Trip;

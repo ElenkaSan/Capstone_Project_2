@@ -8,15 +8,15 @@ CREATE TABLE "users" (
   "note" text,
   PRIMARY KEY ("id", "username")
 );
-
 CREATE TABLE "trips" (
   "id" int PRIMARY KEY,
+  "trip_name" text NOT NULL,
+  "trip_date" DATETIME NOT NULL,
   "user_id" varchar UNIQUE NOT NULL,
   "flightReservation_id" int UNIQUE NOT NULL,
   "hotelReservation_id" int UNIQUE NOT NULL,
   "carRental_id" int UNIQUE NOT NULL
 );
-
 CREATE TABLE "flightReservations" (
   "id" int PRIMARY KEY,
   "numberOfPassengers" numeric NOT NULL,
@@ -28,7 +28,6 @@ CREATE TABLE "flightReservations" (
   "date_arrival" date NOT NULL,
   "price" integer NOT NULL,
 );
-
 CREATE TABLE "hotelReservations" (
   "id" int PRIMARY KEY,
   "hotelName" text NOT NULL,
@@ -41,7 +40,6 @@ CREATE TABLE "hotelReservations" (
   "price" integer NOT NULL,
   "imgUrl" text
 );
-
 CREATE TABLE "carRentals" (
   "id" int PRIMARY KEY,
   "carName" text NOT NULL,
@@ -53,15 +51,13 @@ CREATE TABLE "carRentals" (
   "price" integer NOT NULL,
   "imgUrl" text
 );
-
 COMMENT ON COLUMN "users"."email" IS 'check (position(@ IN email) > 1)';
-
 COMMENT ON COLUMN "flightReservations"."type" IS 'ONE_WAY, ROUND_TRIP';
-
-ALTER TABLE "mytrips" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
-
-ALTER TABLE "mytrips" ADD FOREIGN KEY ("flightReservation_id") REFERENCES "flightReservations" ("id");
-
-ALTER TABLE "mytrips" ADD FOREIGN KEY ("hotelReservation_id") REFERENCES "hotelReservations" ("id");
-
-ALTER TABLE "mytrips" ADD FOREIGN KEY ("carRental_id") REFERENCES "carRentals" ("id");
+ALTER TABLE "mytrips"
+ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+ALTER TABLE "mytrips"
+ADD FOREIGN KEY ("flightReservation_id") REFERENCES "flightReservations" ("id");
+ALTER TABLE "mytrips"
+ADD FOREIGN KEY ("hotelReservation_id") REFERENCES "hotelReservations" ("id");
+ALTER TABLE "mytrips"
+ADD FOREIGN KEY ("carRental_id") REFERENCES "carRentals" ("id");
