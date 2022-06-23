@@ -1,12 +1,14 @@
 import React, { useContext } from "react"
 import { Switch, Route, Redirect } from "react-router-dom"
 import Homepage from "../homepage/Homepage"
-// import CompanyList from "../companies/CompanyList";
-// import JobCardList from "../jobs/JobCardList";
-// import CompanyDetail from "../companies/CompanyDetail";
+
 import FlightDetail from "../flights/FlightDetail"
 import HotelDetail from "../hotels/HotelDetail"
+import HotelCard from "../hotels/HotelCard"
 import CarrentalDetail from "../carsrental/CarrentalDetail"
+import CarCard from "../carsrental/CarCard"
+
+
 import FlightsList from "../flights/FlightsList"
 import HotelsList from "../hotels/HotelsList"
 import CarsrentalList from "../carsrental/CarsrentalList"
@@ -14,10 +16,12 @@ import CarsrentalList from "../carsrental/CarsrentalList"
 import SearchFlights from "../flights/SearchFlights"
 import SearchHotels from "../hotels/SearchHotels"
 import SearchCars from "../carsrental/SearchCars"
+
+import SignupForm from "../auth/SignupForm"
 import LoginForm from "../auth/LoginForm"
 import ProfileForm from "../auth/ProfileForm"
 import MyTrip from "../auth/MyTrip"
-import SignupForm from "../auth/SignupForm"
+
 import UserContext from "../auth/UserContext"
 
 // import Checkout from './Checkout'
@@ -39,9 +43,6 @@ const Routes = ({ login, signup }) => {
           <Route exact path="/">
             <Homepage />
           </Route>
-          {/* <Route exact path="/companies">
-            <CompanyList />
-          </Route> */}
           <Route exact path="/flights">
             {/* <FlightsList /> */}
             <SearchFlights />
@@ -50,25 +51,21 @@ const Routes = ({ login, signup }) => {
             <FlightDetail />
           </Route>
           {/* 
-          <Route exact path="/jobs">
-            <JobCardList />
-          </Route> */}
           <Route exact path="/hotels">
             {/* <HotelsList /> */}
             <SearchHotels />
           </Route>
           <Route exact path="/hotels/:id">
-            <HotelDetail />
+            {/* <HotelDetail /> */}
+            <HotelCard />
           </Route>
-          {/* <Route exact path="/companies/:handle">
-            <CompanyDetail />
-          </Route> */}
           <Route exact path="/cars">
             {/* <CarsrentalList /> */}
             <SearchCars />
           </Route>
           <Route exact path="/cars/:id">
-            <CarrentalDetail />
+            {/* <CarrentalDetail /> */}
+            <CarCard />
           </Route>
 
           <Route path="/profile">
@@ -119,8 +116,6 @@ const Routes = ({ login, signup }) => {
         </Switch>
       </div>
   );
-
-  
 }
 
 export default Routes;
