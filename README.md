@@ -6,6 +6,17 @@ This website allows users to create an account and save the result after that wi
 
 ## App Information
 ## [Back-end](https://github.com/ElenkaSan/Capstone_Project_2_Backend.git) 
+
+cd into the "backend" directory, install required packages, create and seed database, and start the server. (Make sure that you have postgreSQL installed)
+  ```sh
+  cd backend  
+  npm install  
+  createdb vacation
+  psql < vacation.sql  
+  nodemon server.js
+  ```  
+  This will start the server on port 3001
+  
 ### Data
 For this CP database that takes trip-related information from the [Priceline API](https://rapidapi.com/tipsters/api/priceline-com-provider/)
 
@@ -22,6 +33,15 @@ DB schema:
 <img width="1249" alt="Screen Shot 2022-06-12 at 12 39 33 PM" src="https://user-images.githubusercontent.com/75818489/173243653-85f497ea-a5f3-40c7-af9e-82319bb7d75e.png">
 
 ## Front-end
+
+cd into the "frontend" directory, install required packages, then start the app 
+  ```sh
+  cd frontend    
+  npm install    
+  npm start
+  ```
+  This will run your app on http://localhost:3000
+  
 ### Routes
 |Path                 | Component         |  
 |---------------------|-------------------|
