@@ -8,7 +8,8 @@ import Api from "./api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
 import { AmadeusApi } from "./amadeusApi";
-import { CLIENT_ID, CLIENT_SECRET } from "./amadeusConfig";
+require("dotenv").config();
+
 // Key name for storing token in localStorage for "remember me" re-login
 export const TOKEN_STORAGE_ID = "jobly-token";
 
@@ -35,9 +36,8 @@ function App() {
   useEffect(
     function loadUserInfo() {
       console.debug("App useEffect loadUserInfo", "token=", token);
-      AmadeusApi.clientId = process.env.AMADEUS_CLIENT_ID || CLIENT_ID;
-      AmadeusApi.clientSecret =
-        process.env.AMADEUS_CLIENT_SECRET || CLIENT_SECRET;
+      AmadeusApi.clientId = process.env.AMADEUS_CLIENT_ID;
+      AmadeusApi.clientSecret = process.env.AMADEUS_CLIENT_SECRET;
 
       async function getUserProfile() {
         if (token) {
