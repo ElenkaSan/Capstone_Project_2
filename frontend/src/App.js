@@ -7,8 +7,8 @@ import LoadingSpinner from "./common/LoadingSpinner";
 import Api from "./api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
-
-
+import { AmadeusApi } from "./amadeusApi";
+import { CLIENT_ID, CLIENT_SECRET } from "./amadeusConfig";
 // Key name for storing token in localStorage for "remember me" re-login
 export const TOKEN_STORAGE_ID = "jobly-token";
 
@@ -19,38 +19,46 @@ function App() {
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
 
   console.debug(
-      "App",
-      "infoLoaded=", infoLoaded,
-      "isLoggedIn=", isLoggedIn,
-      "token=", token,
+    "App",
+    "infoLoaded=",
+    infoLoaded,
+    "isLoggedIn=",
+    isLoggedIn,
+    "token=",
+    token
   );
 
   // Load user info from API. Until a user is logged in and they have a token,
   // this should not run. It only needs to re-run when a user logs out, so
   // the value of the token is a dependency for this effect.
 
-  useEffect(function loadUserInfo() {
-    console.debug("App useEffect loadUserInfo", "token=", token);
+  useEffect(
+    function loadUserInfo() {
+      console.debug("App useEffect loadUserInfo", "token=", token);
+      AmadeusApi.clientId = process.env.AMADEUS_CLIENT_ID || CLIENT_ID;
+      AmadeusApi.clientSecret =
+        process.env.AMADEUS_CLIENT_SECRET || CLIENT_SECRET;
 
-    async function getUserProfile() {
-      if (token) {
-        try {
-          let { username } = jwt.decode(token);
-          Api.token = token;
-          let isLoggedIn = await Api.getUserProfile(username);
-          setIsLoggedIn(isLoggedIn);
-          setApplicationIds(new Set(isLoggedIn.applications));
-        } catch (err) {
-          console.error(err);
-          setIsLoggedIn(null);
+      async function getUserProfile() {
+        if (token) {
+          try {
+            let { username } = jwt.decode(token);
+            Api.token = token;
+            let isLoggedIn = await Api.getUserProfile(username);
+            setIsLoggedIn(isLoggedIn);
+            setApplicationIds(new Set(isLoggedIn.applications));
+          } catch (err) {
+            console.error(err);
+            setIsLoggedIn(null);
+          }
         }
+        setInfoLoaded(true);
       }
-      setInfoLoaded(true);
-    }
-    setInfoLoaded(false);
-    getUserProfile();
-  }, [token]);
- 
+      setInfoLoaded(false);
+      getUserProfile();
+    },
+    [token]
+  );
 
   const signup = async (signupData) => {
     try {
@@ -61,7 +69,7 @@ function App() {
       console.error(err);
       return { success: false, error: err };
     }
-  }
+  };
 
   const login = async (loginData) => {
     try {
@@ -72,20 +80,20 @@ function App() {
       console.error(err);
       return [false, err.message];
     }
-  }
+  };
 
   const logout = () => {
-      setIsLoggedIn(null);
-      setToken(null);
-    }
+    setIsLoggedIn(null);
+    setToken(null);
+  };
 
   const hasAppliedTrip = (id) => {
     return applicationIds.has(id);
-  }
+  };
 
   const applyToTrip = async (id) => {
     if (hasAppliedTrip(id)) return;
-    try{
+    try {
       Api.addingFlight(id, isLoggedIn.username);
       Api.addingHotel(id, isLoggedIn.username);
       Api.addingCar(id, isLoggedIn.username);
@@ -94,7 +102,7 @@ function App() {
       console.error(err.message);
     }
   };
-   
+
   const unApplyToTrip = async (id) => {
     if (!hasAppliedTrip(id)) return;
     try {
@@ -121,31 +129,34 @@ function App() {
       setIsLoggedIn(null);
       return [false, err.message];
     }
-  } 
+  }
 
   const updateUser = (newUser) => {
-    setIsLoggedIn(newUser)
+    setIsLoggedIn(newUser);
   };
 
   if (!infoLoaded) return <LoadingSpinner />;
 
   return (
-      <BrowserRouter>
-        <UserContext.Provider
-            value={{ isLoggedIn, 
-                    updateUser, 
-                    setIsLoggedIn,
-                    hasAppliedTrip,
-                    applyToTrip, 
-                    unApplyToTrip,
-                    updateCurrentUser,
-                    applicationIds }}>
-          <div className="App">
-            <Navigation logout={logout} />
-            <Routes login={login} signup={signup} />
-          </div>
-        </UserContext.Provider>
-      </BrowserRouter>
+    <BrowserRouter>
+      <UserContext.Provider
+        value={{
+          isLoggedIn,
+          updateUser,
+          setIsLoggedIn,
+          hasAppliedTrip,
+          applyToTrip,
+          unApplyToTrip,
+          updateCurrentUser,
+          applicationIds,
+        }}
+      >
+        <div className="App">
+          <Navigation logout={logout} />
+          <Routes login={login} signup={signup} />
+        </div>
+      </UserContext.Provider>
+    </BrowserRouter>
   );
 }
 
