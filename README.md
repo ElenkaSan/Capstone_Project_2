@@ -17,9 +17,6 @@ cd into the "backend" directory, install required packages, create and seed data
   ```  
   This will start the server on port 3001
   
-### Data
-For this CP database that takes trip-related information from the [Priceline API](https://rapidapi.com/tipsters/api/priceline-com-provider/)
-
 ```sh
 DB schema: 
   ├── trips table (favorite trip) 
@@ -33,6 +30,11 @@ DB schema:
 <img width="1249" alt="Screen Shot 2022-06-12 at 12 39 33 PM" src="https://user-images.githubusercontent.com/75818489/173243653-85f497ea-a5f3-40c7-af9e-82319bb7d75e.png">
 
 ## Front-end
+
+### Data
+For this CP database that takes trip-related information from the [Amadeus API](https://developers.amadeus.com/)
+[Weather Bit API](https://www.weatherbit.io/api)
+
 
 cd into the "frontend" directory, install required packages, then start the app 
   ```sh
