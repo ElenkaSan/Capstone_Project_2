@@ -32,8 +32,8 @@ DB schema:
 ## Front-end
 
 ### Data
-For this CP database that takes trip-related information from the [Amadeus API](https://developers.amadeus.com/)
-[Weather Bit API](https://www.weatherbit.io/api)
+- For this CP database that takes trip-related information from the [Amadeus API](https://developers.amadeus.com/)
+- [Weather Bit API](https://www.weatherbit.io/api)
 
 
 cd into the "frontend" directory, install required packages, then start the app 
