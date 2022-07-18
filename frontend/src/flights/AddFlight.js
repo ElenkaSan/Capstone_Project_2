@@ -14,13 +14,32 @@ const AddFlight = () => {
 
     const findFlights = async (formData) => {
         try {
-            let data = await AmadeusApi.getAiport(formData);
-            setFlights(data.map(d => d));
+            let airport1 = await AmadeusApi.getAirport(formData.origin, "AIRPORT, CITY");
+            let airport2 = await AmadeusApi.getAirport(formData.destination, "AIRPORT, CITY");
+            console.log({ airport1, airport2 })
+            // let oneway = await AmadeusApi.flightOffersOneWay(formData);
+            // let around = await AmadeusApi.flightOffersNonstopAround(formData);
+            // setFlights(oneway.map(d => d) || around.map(d => d));
         }
         catch (e) {
-            console.log(e);
+            console.log(e)
         }
     }
+
+    // const flightSearchAny = async (shortData) => {
+    //     try {
+    //        let data = await AmadeusApi.flightDestinationsNonstop(
+    //         shortData.origin, "AIRPORT, CITY",
+    //         shortData.startDate, "mm/dd/yyyy",
+    //         // `${yyyy}-${mm}-${dd}`
+    //         shortData.adults
+    //        );
+    //         setFlights(data.map(d => d));
+    //     }
+    //     catch (e) {
+    //        console.log(e);
+    //     }
+    // }
 
     if (!flights) return <LoadingSpinner />;
     return (
