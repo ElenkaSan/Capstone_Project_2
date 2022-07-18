@@ -1,9 +1,7 @@
 const Amadeus = require("amadeus");
 require("dotenv").config();
-// const { AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET } = require("./config");
+// const { AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET } = require("dotenv").config();
 
-// AmadeusApi.clientId = process.env.AMADEUS_CLIENT_ID;
-// AmadeusApi.clientSecret = process.env.AMADEUS_CLIENT_SECRET;
 const amadeus = new Amadeus({
   // clientId: AMADEUS_CLIENT_ID,
   // clientSecret: AMADEUS_CLIENT_SECRET,
@@ -14,22 +12,12 @@ const amadeus = new Amadeus({
 });
 
 class AmadeusApi {
-  // static clientId;
-  // static clientSecret;
+//   static clientId;
+//   static clientSecret;
 
   // ========= Trip Search ==========
-  // static async getTrip( originLocationCode, destinationLocationCode, departureDate, returneDate) {
-  //   const result = await amadeus.travel.predictions.tripPurpose.get({
-  //     originLocationCode,
-  //     destinationLocationCode,
-  //     departureDate,
-  //     returneDate,
-  //   });
-  //   return result;
-  // }
-  
   static async getTrip( originLocationCode, destinationLocationCode, departureDate, returneDate) {
-    const result = await amadeus.client.get(`/v1/travel/predictions/trip-purpose`,{
+    const result = await amadeus.travel.predictions.tripPurpose.get({
       originLocationCode,
       destinationLocationCode,
       departureDate,
@@ -37,65 +25,32 @@ class AmadeusApi {
     });
     return result;
   }
-
+  
   //========= Airoport & City   ----------------------------------------
     //  https://developers.amadeus.com/blog/airport-autocomplete-app-with-the-mern-stack 
 
-  // static async getAiportCity(keyword, subType, page) {
-  //   const result = await amadeus.client.get({
-  //     keyword,
-  //     subType,
-  //     page
-  //   });
-  //   return result;
-  // }
-
   static async getAiportCity(keyword, subType, page) {
-    const result = await amadeus.client.get(`/airport/v1/reference-data/locations`,{
+    const result = await amadeus.client.get({
       keyword,
       subType,
       page
     });
     return result;
   }
-  // static async getAiportCity(keyword, page, subType) {
-  //   const result = amadeus.referenceData.locations.get(`/airport/${keyword}&${page}&${subType}`);
-  //   return result;
-  // }
 
 // ====== City search suggestions with Airport & City Search API   ----------------------------------------
-  // static async getAirport(keyword, subType) {
-  //   const result = await amadeus.referenceData.locations.get({
-  //     keyword,
-  //     subType,
-  //   });
-  //   return result;
-  // }
-
-  // static async getAirport(keyword, subType) {
-  //   const result = await amadeus.referenceData.locations.get(`/airport/${keyword}&${subType}`
-  //   // , subType
-  //   );
-  //   return result;
-  // }
-
-  static async getAiport(keyword, subType) {
-    const result = await amadeus.client.get(`/airport/v1/reference-data/locations`,{
+// Flight Inspiration Search
+  static async getAirport(keyword, subType) {
+    const result = await amadeus.referenceData.locations.get({
       keyword,
-      subType
+      subType,
     });
     return result;
   }
 
-  // app.get("/airport/:city", (req, res) => {
-  //   amadeus.referenceData.locations
-  //     .get({
-  //       keyword: req.params.city,
-  //       subType: Amadeus.location.any
-  //     })
-
 // ======== Flights ===== https://github.com/amadeus4dev/amadeus-node/blob/master/README.md
   static async getFlight (  originLocationCode, destinationLocationCode, departureDate, adults) {
+    // console.log("HERE")
     const result = amadeus.shopping.flightOffersSearch.get({
     originLocationCode,
     destinationLocationCode,
@@ -105,36 +60,18 @@ class AmadeusApi {
 return result;
 }
 
-// = ==========  NonStop
-  // static async flightDestinationsNonstop( origin, departureDate, nonStop) {
-  //   const result = await amadeus.shopping.flightDestinations.get({
-  //     origin,
-  //     departureDate,
-  //     nonStop,
-  //   });
-  //   return result;
-  // }
-  // static async flightDestinationsNonstop( origin, departureDate, nonStop) {
-  //   const result = await amadeus.shopping.flightDestinations.get(`/flightDestinations/${origin}/${departureDate}/${nonStop}`);
-  //   return result;
-  // }
-
+// = ==========  NonStop  
+ // Flight Inspiration Search
   static async flightDestinationsNonstop( origin, departureDate, nonStop) {
-    const result = await amadeus.client.get(`/airport/v1/reference-data/locations`,{
+    const result = await amadeus.shopping.flightDestinations.get({
       origin,
       departureDate,
       nonStop,
     });
     return result;
   }
-  // app.get("/flightDestinations/:city/:date/:nonstop?", (req, res) => {
-  //   amadeus.shopping.flightDestinations
-  //     .get({
-  //       origin: req.params.city,
-  //       departureDate: req.params.date,
-  //       nonStop: req.params.nonstop || false
-  //     })
 
+  // Flight Cheapest Date Search
   static async cheapestFlightDate( origin, destination ) {
     const result = await amadeus.shopping.flightDates.get({
       origin,
@@ -142,11 +79,8 @@ return result;
     });
     return result;
   }
-  // static async cheapestFlightDate( origin, destination ) {
-  //   const result = await amadeus.shopping.flightDates.get(`/cheapestDate/${origin}/${destination}`);
-  //   return result;
-  // }
 
+  // Flight Low-fare Search
   static async flightLowFare(  originLocationCode, destinationLocationCode, departureDate ) {
     const result = await amadeus.shopping.flightOffers.get({
       originLocationCode,
@@ -155,13 +89,9 @@ return result;
     });
     return result;
   }
-  // static async flightLowFare(  originLocationCode, destinationLocationCode, departureDate ) {
-  //   const result = await amadeus.shopping.flightOffers.get(`/lowFare/${originLocationCode}/${destinationLocationCode}/${departureDate}`);
-  //   return result;
-  // }
 
-
-  static async flightOffersNonstop( origin, destination, departureDate, adults, max, nonStop ) {
+  // Flight Offers Search
+  static async flightOffersOneWay( origin, destination, departureDate, adults, max, nonStop ) {
     const result = await amadeus.shopping.flightOffers.get({
       origin,
       destination,
@@ -173,6 +103,20 @@ return result;
     return result;
   }
 
+  static async flightOffersNonstopAround( origin, destination, departureDate, returnDate, adults, max, nonStop ) {
+    const result = await amadeus.shopping.flightOffers.get({
+      origin,
+      destination,
+      departureDate,
+      returnDate,
+      adults,
+      max,
+      nonStop,
+    });
+    return result;
+  }
+
+ // Flight Choice Prediction
   static async flightPrediction( origin, destination, departureDate ) {
     const result = await amadeus.shopping.flightOffers.get({
       origin,
@@ -186,6 +130,7 @@ return result;
     return result;
   }
 
+   // Flight Checkin Links
   static async flightCheckin( airlineCode ) {
     const result = await amadeus.referenceData.urls.checkinLinks.get({
       airlineCode
@@ -194,6 +139,7 @@ return result;
   }
 
   // ======= Hotel
+  // Get list of hotels by city code
   static async getHotelByCity( cityCode, checkInDate, checkOutDate ) {
     const result = await amadeus.shopping.hotelOffers.get({
       cityCode,
@@ -202,46 +148,41 @@ return result;
     });
     return result;
   }
-  // static async getHotelByCity( cityCode, checkInDate, checkOutDate ) {
-  //   const result = await amadeus.shopping.hotelOffers.get(`/hotels/${cityCode}/${checkInDate}/${checkOutDate}`);
-  //   return result;
-  // }
 
+  // Hotel Ratings
   static async hotelRating( hotelId ) {
     const result = await amadeus.eReputation.hotelSentiments.get({
           hotelId
         });
     return result;
   }
-  // static async hotelRating( hotelId ) {
-  //   const result = await amadeus.eReputation.hotelSentiments.get(`/hotelRating/${hotelId}`);
-  //   return result;
-  // }
 
 // ========= City-Hotel =====================
+// Get list of offers for a specific hotel
   static async hotelOffer( cityCode ) {
     const result = await  amadeus.shopping.hotelOffer.get({
         cityCode
         });
     return result;
   }
-  // static async hotelOffer( cityCode ) {
-  //   const result = await  amadeus.shopping.hotelOffer.get(`/hotelOfferAvailability/${cityCode}`);
-  //   return result;
-  // }
 
-  // ============== hotel-offers ================ 
+  // ============== hotel-offers ================  
+  // Get list of offers for a specific hotel
   static async hotelList( hotelId ) {
     const result = await amadeus.shopping.hotelOffersByHotel.get({
       hotelId
     });
     return result;
   }
-  // static async hotelList( hotelId ) {
-  //   const result = await amadeus.shopping.hotelOffersByHotel.get(`/hotelOffers/${hotelId}`);
-  //   return result;
-  // }
 
+  // Confirm the availability of a specific offer id
+    static async hotelOffer( hotelOffer ) {
+      const result = await  amadeus.shopping.hotelOffer.get({
+          hotelOffer
+          });
+      return result;
+    }
+  // Points of Interest
   static async hotelPointsOfInterest( latitude, longitude) {
     const result = await  amadeus.shopping.hotelOffer.get({
        latitude,
@@ -249,10 +190,6 @@ return result;
         });
     return result;
   }
-  // static async hotelPointsOfInterest( latitude, longitude) {
-  //   const result = await  amadeus.shopping.hotelOffer.get(`/pointsOfInterest/${latitude}/${longitude}`);
-  //   return result;
-  // }
 
 }
 
