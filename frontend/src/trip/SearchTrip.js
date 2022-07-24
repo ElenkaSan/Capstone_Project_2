@@ -26,10 +26,17 @@ const SearchTrip = ( ) =>  {
     const [formData, setFormData] = useState(INITIAL_STATE);
     const [trips, setTrips] = useState([]);
 
+    // ocde MIA - JFK
     const findTripPurpose = async (formData) => {
         try {
-            let data = await AmadeusApi.getTrip(formData);
-            setTrips(data.map(d => d));
+            let trips = await AmadeusApi.getTrip(formData.originLocationCode, 
+                                                formData.destinationLocationCode,
+                                                formData.departureDate,
+                                                formData.returnDate);
+            console.log(trips)
+            setTrips(trips);
+            // setTrips(trips.map(d => d));
+            // return data;
         }
         catch (e) {
             console.log(e);
@@ -59,7 +66,7 @@ const SearchTrip = ( ) =>  {
           <Card className="J card col-md-8 offset-md-2">
             <CardBody>
               <CardTitle className="T font-weight-bold text-center text-light">
-                <h3>Search Trip</h3>
+                <h3>Search Better Trip Price</h3>
               </CardTitle> <hr/>
               <Form onSubmit={handleSubmit}>
                 <FormGroup>
