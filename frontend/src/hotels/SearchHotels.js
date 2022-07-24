@@ -18,9 +18,9 @@ import {
     const SearchHotels = ({ findHotels }) => {
     // let history = useHistory();
     const INITIAL_STATE = {
-        city: "",
-        checkInDate: "",
-        checkOutDate: "",
+        cityCode: '',
+        checkInDate: '',
+        checkOutDate: ''
     } 
 
     const [formData, setFormData] = useState(INITIAL_STATE);
@@ -65,19 +65,19 @@ import {
               <Form onSubmit={handleSubmit}>
                 <FormGroup>
                   <div className="container p-6">   
-                    <Label htmlFor="city" 
+                    <Label htmlFor="cityCode" 
                     // htmlFor="hotelName" 
                     className="control has-icons-left">    
                     <h5 className='T text-light'>Staying In</h5>   
                     </Label>
                     <Input className="input mb-3"
                         // id="hotelName"
-                        id="city"
+                        id="cityCode"
                         type="text"
                         // name="hotelName"
-                        name="city"
+                        name="cityCode"
                         // value={formData.hotelName}
-                        value={formData.city}
+                        value={formData.cityCode}
                         onChange={handleChange}
                         placeholder="Hotel City"
                         required
