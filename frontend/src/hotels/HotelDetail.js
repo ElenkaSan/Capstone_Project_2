@@ -8,14 +8,21 @@ import { NavLink } from "react-router-dom";
 const DEFAULT_IMG = 'https://png.pngtree.com/svg/20170307/the_company_default_logo_574534.png';
 
 function HotelDetail({
-    hotelname,
-    roomcategory,
+    name,
+    cityName,
+    stateCode,
+    room,
+    guests,
     price,
     currency,
-    checkindate,
-    checkoutdate,
+    checkInDate,
+    checkOutDate,
     rating,
-    imgUrl 
+    address,
+    contact,
+    description,
+    amenities,
+    imgUrl
 }) {
 
 //   const { hasAppliedTrip, applyFlight, unApplyFlight } = useContext(UserContext);
@@ -74,11 +81,12 @@ function HotelDetail({
             <NavLink 
             // className="text-info" to={`/hotels/${id}`}
             >
-              <h5> Hotel: {hotelname} </h5>
+              <h5> Hotel: {name}, {cityName}, {stateCode}</h5>
             </NavLink>
           </CardSubtitle>
           <CardText className="font-italic">
-          <p>Room Type: {roomcategory} </p>
+          <p>Room Type: {room} for {guests} ppl </p> 
+          {/* {adults} */}
           <br></br>
           <p>Price:     {price}
              {new Intl.NumberFormat("en-US", {
@@ -87,12 +95,15 @@ function HotelDetail({
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
               }).format(price)} 
-              for {checkindate}  through{" "} {checkoutdate} </p>
+              for {checkInDate}  through{" "} {checkOutDate};</p>
               <p>Rating: {rating}</p>
+              <p>Hotel address: {address}; Contact: {contact};</p>
+              <p>Description {description};</p>
+              <p>Amenities {amenities};</p>
           <div className="row">
           <img 
         //   style={{objectFit: "contain"}}
-           className="col-2 float-right" src={DEFAULT_IMG || imgUrl} alt={hotelname} />
+           className="col-2 float-right" src={DEFAULT_IMG || imgUrl} alt={name} />
             </div>
           </CardText>
           {/* {applied ? unappliedButton : applyButton} */}
