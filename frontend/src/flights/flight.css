@@ -1,0 +1,47 @@
+.main-app {
+    margin: 2% 10%;
+    border: 1px ridge #464141;
+    padding: 5%;
+    font-size: 20px;
+    color: #1c5752;
+    
+   }
+    
+
+   .travel-card {
+    background-color: rgba(66, 66, 66, 0.74);
+    font-family: 'Pontano Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    width: 35rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: block;
+}
+     */
+   .pagination {
+    margin-top: 45px;
+    margin-left: -40px;
+    list-style: none;
+    outline: none;
+    
+   }
+    
+   .pagination>.active>a {
+    background-color: rgb(49, 128, 20);
+    color: #fff;
+   }
+    
+   .pagination>li>a {
+    border: 1px solid #47ccde;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+   }
+    
+   .pagination>li>a, .pagination>li>span {
+    color: rgb(38, 76, 7);
+    font-size: bold;
+    background-color: rgb(150, 213, 33);
+    border-radius: 10px;
+   }
+
