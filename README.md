@@ -13,7 +13,7 @@ cd into the "backend" directory, install required packages, create and seed data
   npm install  
   createdb vacation
   psql < vacation.sql  
-  nodemon server.js
+  nodemon server.js or node server.js
   ```  
   This will start the server on port 3001
   
