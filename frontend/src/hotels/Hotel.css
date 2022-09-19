@@ -1,0 +1,132 @@
+.date-num {
+    /* color: white; */
+    background-color: rgba(255, 255, 255, 0.404);
+    /* width: 12rem; */
+    border-radius: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details {
+    /* color: rgb(6, 131, 255); */
+    /* color: rgb(25, 139, 143); */
+    background-color: rgba(255, 255, 255, 0.513);
+    /* width: 12rem; */
+    border-radius: 4px;
+    font-size: 18px;
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+    /* text-shadow: 1px 1px 1px rgb(25, 139, 143); */
+  }
+  
+
+.hotel-form {
+    text-align: center;
+    align-items: center;
+}
+
+.hotel-form-label {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
+
+#hotelSearchInput, #numOfTravelersInput {
+    display: block;
+    margin: 0 auto;
+    width: 18rem;
+}
+
+.hotel-form-btn {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgb(36, 36, 36);
+    border: solid rgb(36, 36, 36);
+    box-shadow: 0px 5px 15px 8px rgba(0, 0, 0, 0.2), 10px 5px 10px 0px rgba(0, 0, 0, 0.19);
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 17px;
+    width: 12rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.hotel-form-btn:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.87);
+    border: solid rgba(255, 255, 255, 0.87);
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+.hotel-results-header {
+    font-size: 20px;
+}
+
+
+.hotel-details {
+    font-size: 18px;
+  }
+
+  .hotel-results-btn {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgb(36, 36, 36);
+    border: solid rgb(36, 36, 36);
+    box-shadow: 0px 5px 15px 8px rgba(0, 0, 0, 0.2), 10px 5px 10px 0px rgba(0, 0, 0, 0.19);
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 17px;
+    width: 12rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.hotel-results-btn:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.87);
+    border: solid rgba(255, 255, 255, 0.87);
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+
+@media screen and (max-width:470px) {
+    .hotel-card {
+      width: 21.5rem;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+  
+    .hotel-header {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hotel-form-label {
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+    }
+
+    #hotelSearchInput, #numOfTravelersInput {
+        width: 18rem;
+    }
+
+    .hotel-form-btn { 
+        font-size: 16px;
+    }
+
+      /* Hotel Results */
+      .travelCard {
+          width: 21rem;
+      }
+
+      .hotel-results-header {
+          font-size: 20px;
+      }
+
+      .hotel-details {
+        font-size: 17px;
+      }
+
+      .hotel-results-btn {
+        font-size: 16px;
+        width: 10rem;
+    }
+  }
