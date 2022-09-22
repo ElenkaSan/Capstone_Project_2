@@ -106,6 +106,8 @@ src
     ├── useTimedMessage
     └── useToggle
 ```
+<img width="1421" alt="Screen Shot 2022-07-29 at 12 06 22 PM 2" src="https://user-images.githubusercontent.com/75818489/191633006-2f2c2927-8fbd-41c7-b453-1dc919c26fa1.png">
+
 
 ### Functionality
 The app's functionality includes:
