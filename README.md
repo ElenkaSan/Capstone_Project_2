@@ -108,6 +108,9 @@ src
 ```
 <img width="1421" alt="Screen Shot 2022-07-29 at 12 06 22 PM 2" src="https://user-images.githubusercontent.com/75818489/191633006-2f2c2927-8fbd-41c7-b453-1dc919c26fa1.png">
 
+<img width="984" alt="Screen Shot 2022-09-21 at 8 38 23 PM" src="https://user-images.githubusercontent.com/75818489/191633769-1a8dba5e-b4c8-47fd-8c81-851861a3d296.png">
+
+<img width="1069" alt="Screen Shot 2022-09-21 at 8 46 48 PM" src="https://user-images.githubusercontent.com/75818489/191634450-4084d763-2bba-48d2-90cb-ec43605e23b8.png">
 
 ### Functionality
 The app's functionality includes:
