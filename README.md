@@ -112,6 +112,8 @@ src
 
 <img width="1069" alt="Screen Shot 2022-09-21 at 8 46 48 PM" src="https://user-images.githubusercontent.com/75818489/191634450-4084d763-2bba-48d2-90cb-ec43605e23b8.png">
 
+<img width="1073" alt="Screen Shot 2022-09-21 at 8 50 24 PM" src="https://user-images.githubusercontent.com/75818489/191634775-e12995bc-6411-40d2-9243-9b4173264662.png">
+
 ### Functionality
 The app's functionality includes:
   - User can search flights / hotels for every place on Earth
