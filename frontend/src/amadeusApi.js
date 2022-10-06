@@ -5,8 +5,8 @@ require("dotenv").config();
 const amadeus = new Amadeus({
   // clientId: AMADEUS_CLIENT_ID,
   // clientSecret: AMADEUS_CLIENT_SECRET,
-  // clientId: process.env.AMADEUS_CLIENT_ID,
-  // clientSecret: process.env.AMADEUS_CLIENT_SECRET
+  clientId: process.env.AMADEUS_CLIENT_ID,
+  clientSecret: process.env.AMADEUS_CLIENT_SECRET
 });
 
 class AmadeusApi {
